@@ -36,11 +36,11 @@ result = ""
 
 # iterate through the selected objects
 for sel in selection:
-    # get the current object's dimensions; convert from meters to inches and round to 2 decimal places
+    # get the current object's dimensions; convert from meters to centimeters
     dims = sel.dimensions
-    x = float(round(sel.dimensions.x * 39.370, 2))
-    y = float(round(sel.dimensions.y * 39.370, 2))
-    z = float(round(sel.dimensions.z * 39.370, 2))
+    x = float(sel.dimensions.x * 100)
+    y = float(sel.dimensions.y * 100)
+    z = float(sel.dimensions.z * 100)
     # format and output to the screen
     scr = "%s - %.02fin x %.02fin x %.02fin\n" % (sel.name, x, y, z)
     print(scr)
